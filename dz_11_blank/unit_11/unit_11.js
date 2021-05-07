@@ -88,9 +88,17 @@ document.querySelector('.b-5').onclick = f5;
 let d6 = ['test', 5, 12];
 
 function f6() {
-    let inputValue = document.querySelector('.i-6').value;
+    let input = document.querySelector(".i-6");
+    let a = [];
+    a[0] = input.value;
+    
+    for (let i = 0; i < d6.length; i++) {
+        a[d6.length] = d6[i];
+    }
+    
+    d6 = a;
 
-    d6[d6.length-1] += ' ' + inputValue;
+    console.log(d6);
 
     showArr('.out-6', d6);
 }
@@ -106,14 +114,12 @@ document.querySelector('.b-6').onclick = f6;
 let d7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
 
 function f7() {
-
     let a = [];
-    for (let i = d7.length; i > 0; i--) {
-        //a[i] = d7[];
+    for (let i = d7.length-1; i > 0; i--) {
+        a[i-1] = d7[i-1];
+        
     }
     d7 = a;
-
-    console.log(d7);
 
     showArr('.out-7', d7);
 }
@@ -129,14 +135,18 @@ document.querySelector('.b-7').onclick = f7;
 let d8 = [2, '4', 12, 67, 'hello'];
 
 function f8() {
-    // let a = [];
-    // for (let i = 1; i < d7.length; i++) {
-    //     a[i-1] = d7[i];
-    // }
-    // d7 = a;
+    let input = document.querySelector(".i-8");
+    let a = [];
+    a[0] = input.value;
+    
+    for (let i = 0; i < d8.length; i++) {
+        a[a.length] = d8[i];
+    }
+    
+    d8 = a;
 
     showArr('.out-8', d8);
-}
+};
 
 document.querySelector('.b-8').onclick = f8;
 
