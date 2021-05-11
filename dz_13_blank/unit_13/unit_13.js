@@ -121,7 +121,17 @@ let a6 = {
 };
 
 function f6() {
+    let inputValueI61 = document.querySelector('.i-61').value;
+    let inputValueI62 = document.querySelector('.i-62').value;
+    let out = '';
 
+    a6[inputValueI61] = inputValueI62;
+
+    for(let key in a6) {
+        out += `${key}: ${a6[key]}<br>`;
+    }
+
+    document.querySelector('.out-6').innerHTML = out;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -136,7 +146,20 @@ let a7 = {
 
 
 function f7() {
+    let inputValue = document.querySelector('.i-7').value;
+    let out = '';
 
+    for(let key in a7) {
+        if(key == inputValue) {
+            out = 1;
+            break;
+        }
+        else {
+            out = 0;
+        }
+    }
+
+    document.querySelector('.out-7').innerHTML = out;
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -150,6 +173,17 @@ let a8 = {
 };
 
 function f8() {
+    let inputValue = document.querySelector('.i-8').value;
+    let out = 0;
+
+    for(let key in a8) {
+        if(inputValue == key) {
+            out = a8[key];
+            break;
+        }
+    }
+
+    document.querySelector('.out-8').innerHTML = out;
 
 }
 
@@ -167,7 +201,16 @@ let a9 = {
 };
 
 function f9() {
+    let inputValue = document.querySelector('.i-9').value;
+    let out = '';
 
+    for(let key in a9) {
+        if(a9[key] == inputValue) {
+            out += key + ' ';
+        }
+    }
+
+    document.querySelector('.out-9').textContent = out;
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -176,7 +219,12 @@ document.querySelector('.b-9').onclick = f9;
 // Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
 
 function f10(arr, val) {
-
+    for(let key in arr) {
+        if(arr[key] == val) {
+            return true;
+        }
+    }
+    return false;
     //return true;
     //return false;
 }
@@ -187,7 +235,7 @@ document.querySelector('.b-10').onclick = () => {
         "d": 54,
         "m": 22,
     }
-    document.querySelector('.out-10').innerHTML = f10(a10, 22);
+    document.querySelector('.out-10').innerHTML = f10(a10, 54);
 };
 
 
@@ -203,6 +251,19 @@ let a11 = {
 };
 
 function f11() {
+    let inputValue = document.querySelector('.i-11').value;
+    let out = '';
+
+    for(let key in a11) {
+        if(key == inputValue) {
+            delete a11[key];
+        } else {
+            out += `${key}: ${a11[key]}<br>`; 
+        }
+        
+    }
+
+    document.querySelector('.out-11').innerHTML = out;
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -219,6 +280,19 @@ let a12 = {
 };
 
 function f12() {
+    let inputValue = document.querySelector('.i-12').value;
+    let out = '';
+
+    for(let key in a12) {
+        if(a12[key] == inputValue) {
+            delete a12[key];
+        } else {
+            out += `${key}: ${a12[key]}<br>`; 
+        }
+        
+    }
+
+    document.querySelector('.out-12').innerHTML = out;
 
 }
 
@@ -235,7 +309,13 @@ let a13 = {
 };
 
 function f13() {
-
+    let out = 0;
+    for(let key in a13) {
+        if(typeof a13[key] === 'number') {
+            out += a13[key];
+        }
+    }
+    document.querySelector('.out-13').textContent = out;
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -251,11 +331,20 @@ let a14 = {
     'ivan': [9, 10]
 };
 
-function f14() {
+function f14(index) {
+    let out = '';
+    for(let key in a14) {
 
+        if(a14[key][index]) {
+            out += a14[key][index] + ' '; 
+        }
+    }
+    return out;
 }
 
-document.querySelector('.b-14').onclick = f14;
+document.querySelector('.b-14').onclick = () => {
+    document.querySelector('.out-14').innerHTML = f14(0);
+};
 
 // Task 15
 // При нажатии b-15 выполняете функцию f15. Функция должна в out-15 выводить элементы вложенных массивов в a15. Вывод через пробел.
@@ -270,7 +359,14 @@ let a15 = {
 };
 
 function f15() {
+    let out = '';
+    for(let key in a15) {
+        for(let i = 0; i < a15[key].length; i++) {
+            out += a15[key][i] + ' ';
+        }
+    }
 
+    document.querySelector('.out-15').textContent = out;
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -281,23 +377,31 @@ document.querySelector('.b-15').onclick = f15;
 let a16 = {
     "iis8sj": {
         "name": "Ivan",
-        "age": 27,
+        '2': 27,
     },
     "iiss7j": {
         "name": "Petr",
-        "age": 26,
+        "2": 26,
     },
     "s3s8sj": {
         "name": "Serg",
-        "age": 47,
+        "2": 47,
     },
 }
 
-function f16() {
+function f16(_value) {
+    let out = '';
 
+    for(let key in a16) {
+        out += a16[key][_value] + ' ';
+    }
+
+    return out;
 }
 
-document.querySelector('.b-16').onclick = f16;
+document.querySelector('.b-16').onclick = () => {
+    document.querySelector('.out-16').innerHTML = f16('name');
+};
 
 
 // Task 17
@@ -318,11 +422,21 @@ let a17 = {
     },
 }
 
-function f17() {
+function f17(_value) {
+    let out = '';
 
+    for(let key in a17) {
+        if(a17[key]['age'] > 30)
+        out += a17[key][_value] + ' ';
+    }
+
+    return out;
 }
 
-document.querySelector('.b-17').onclick = f17;
+
+document.querySelector('.b-17').onclick = () => {
+    document.querySelector('.out-17').innerHTML = f17('name');
+};
 
 // Task 18
 // При нажатии b-18 выполняете функцию f18. Функция должна в out-18 вывести станции метро из массива a18 той ветки, которую пользователь ввел в i-18. Вывод станций - через пробел. Если ветка не найдена выводите пустую строку.
@@ -334,8 +448,21 @@ let a18 = {
 }
 
 function f18() {
+    let inputValue = document.querySelector('.i-18').value;
+    let out = '';
 
+    for(let key in a18) {
+        for(let i = 0; i < a18[key].length; i++) {
+            if(key === inputValue) {
+                out += a18[key][i] + ' ';
+            }
+        }
+    }
+
+    document.querySelector('.out-18').textContent = out;
 }
+
+document.querySelector('.b-18').onclick = f18;
 
 // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
@@ -348,7 +475,18 @@ let a19 = {
 }
 
 function f19() {
+    let inputValue = document.querySelector('.i-19').value.toLowerCase();
+    let out = '';
 
+    for(let key in a19) {
+        for(let i = 0; i < a19[key].length; i++) {
+            if(a19[key][i].toLowerCase() === inputValue) {
+                out = key;
+            }
+        }
+    }
+
+    document.querySelector('.out-19').textContent = out;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -363,7 +501,19 @@ let a20 = {
 }
 
 function f20() {
+    let out = '';
+    
+    for(let key in a20) {
+        for(let i = 0; i < a20[key].length; i++) {
+            for(let k = 0; k < a20[key][i].length; k++) {
+                if (a20[key][i][k] === 2) {
+                    out += a20[key][i][0] + ' ';
+                }
+            }
+        }
+    } 
 
+    document.querySelector('.out-20').textContent = out;
 }
 
 document.querySelector('.b-20').onclick = f20

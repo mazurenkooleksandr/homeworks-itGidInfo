@@ -73,7 +73,7 @@ document.querySelector('.b-5').onclick = f5;
 
 function f6() {
     let out = '';
-    let a6 = [[1, 2], [3, 4], [5, 6], [21, 34], [44, 56]];
+    let a6 = [[1, 2], [3, 4], [5, 6], [21, 34, 45], [44, 56]];
     for(let i = 0; i < a6.length; i++) {
         if(a6[i][0] % 2) out += a6[i][0] + ' ';
         if(a6[i][1] % 2) out += a6[i][1] + ' ';
@@ -97,7 +97,7 @@ function f7() {
     ];
     for (let i = 0; i < a7.length; i++) {
         for (let k = 0; k < a7[i].length; k++) {
-            if (a7[i][k] % 2 == 0) out += a7[i][k] + ' ';
+            if (a7[i][k] % 2 === 0) out += a7[i][k] + ' ';
         }
     }
     document.querySelector('.out-7').innerHTML = out;
