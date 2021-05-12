@@ -204,23 +204,27 @@ document.querySelector('.b-12').onclick = () => {
 // пример результата для строки 'Hello ho'
 // { "H" : 1, 'e' : 1, 'l' : 2, "o" : 2, " ": 1}
 
-let str13 = 'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
+let str13 = [
+    'The name conjures up visions of ',
+    'plum pudding and Christmas punch quaint coaching inns ',
+    'and Cozy firesides but also of orphaned and starving children'
+];
 
 const f13 = () => {
-    let a = str13.split('');
-
-    let s13 = new Set(a);
-
     let b = {};
-
-    for(let key of s13) {
-        let counter = 0;
-        for(let i = 0; i < a.length; i++) {
-            if(key == a[i]){
-                b[key] = counter++;
-            }  
-        }  
+    for(let i = 0; i < str13.length; i++) {
+        var currentString = str13[i];
+        for(let k = 0; k < currentString.length; k++) {
+            var key = currentString[k];
+            if(b[key]) {
+                b[key]++;
+            } else {
+                b[key] = 1;
+            }
+        }
     }
+    //console.log(a);
+
     return b;
 }
 
