@@ -451,12 +451,9 @@ function f18() {
     let inputValue = document.querySelector('.i-18').value;
     let out = '';
 
-    for(let key in a18) {
-        for(let i = 0; i < a18[key].length; i++) {
-            if(key === inputValue) {
-                out += a18[key][i] + ' ';
-            }
-        }
+    var aerr = a18[inputValue];
+    for(let i = 0; i < aerr.length; i++) {
+        out += aerr[i] + ' ';
     }
 
     document.querySelector('.out-18').textContent = out;
@@ -475,13 +472,19 @@ let a19 = {
 }
 
 function f19() {
-    let inputValue = document.querySelector('.i-19').value.toLowerCase();
+    let inputValue = document.querySelector('.i-19').value;
     let out = '';
+    var isFound = false;
 
     for(let key in a19) {
+        if(isFound) {
+            break;
+        }
         for(let i = 0; i < a19[key].length; i++) {
-            if(a19[key][i].toLowerCase() === inputValue) {
+            if(a19[key][i].toLowerCase() === inputValue.toLowerCase()) {
                 out = key;
+                isFound = true;
+                break;
             }
         }
     }
@@ -497,7 +500,7 @@ document.querySelector('.b-19').onclick = f19;
 let a20 = {
     "red": [['Akademmistechko', 1], ['Nyvky', 0], ['Universytet', 3], ['Lisova', 1]],
     "blue": [['Minska', 1], ['Obolon', 0], ['Pochaina', 2], ['Holosiivska', 0]],
-    "green": [['Syrets', 1], ['Zoloti Vorota', 2], ['Klovska', 0], ['Vidubichi', 1]],
+    "green": [['Syrets', 1], ['Zoloti Vorota', 2], ['Klovska', 0], ['Vidubichi', 1]]
 }
 
 function f20() {
@@ -505,14 +508,11 @@ function f20() {
     
     for(let key in a20) {
         for(let i = 0; i < a20[key].length; i++) {
-            for(let k = 0; k < a20[key][i].length; k++) {
-                if (a20[key][i][k] === 2) {
-                    out += a20[key][i][0] + ' ';
-                }
+            if (a20[key][i][1] === 2) {
+                out += a20[key][i][0] + ' ';
             }
         }
     } 
-
     document.querySelector('.out-20').textContent = out;
 }
 
