@@ -2,12 +2,30 @@
 //При нажатии .b-1 выполняете функцию f1. Функция перебирает массив a1  c помощью цикла for (let i. Выведите на страницу в .out-1 формате значение+пробел.
 
 let a1 = [5, 7, 9, 11, 13, 15];
+let rrr = [5, 7, 9];
+let tttt = [5, 7, 7, 15];
 
 function f1() {
     let out = '';
-    for (let i = 0; i < a1.length; i++) {
-        out += i + ' ';
-    }
+    
+    a1.map(testFunction);
+    rrr.map(testFunction);
+    tttt.map(testFunction);
+
+    function testFunction(elem, v1, v2) {
+        out += elem + ' ';
+    }l
+
+    // function testFunct2(_arr){
+    //     for (let i = 0; i < _arr.length; i++) {
+    //         testFunction(_arr[i]);
+    //     }
+    // }
+
+    // testFunct2(a1);
+    // testFunct2(rrr);
+    // testFunct2(tttt);
+
     document.querySelector('.out-1').textContent = out;
 }
 
