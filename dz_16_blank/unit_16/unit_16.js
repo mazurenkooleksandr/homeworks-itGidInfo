@@ -22,8 +22,7 @@ function f2() {
     let out = '';
 
     for (let i = 0; i < a2.length; i++) {
-        out += `${i}: ${a2[i]}, `;
-        // out += i + ': ' + a2[i] + ', ';
+        out += i + ': ' + a2[i] + ', ';
     }
     document.querySelector('.out-2').textContent = out;
 }
@@ -34,9 +33,12 @@ document.querySelector('.b-2').addEventListener('click', f2);
 //При нажатии .b-3 выполняете функцию f3. Функция получает div.out-3 со страницы с помощью getElementsByClassName и в каждый записывает число 3, перезаписывая содержимое div.
 
 function f3() {
-    let divOut = document.getElementsByClassName('div.out-3');
+    let divOut = document.getElementsByClassName('out-3');
 
-    divOut.innerHTML = 3;
+    for (let key in divOut) {
+        divOut[key].innerHTML = 3;
+    }
+
 }
 
 document.querySelector('.b-3').addEventListener('click', f3);
@@ -145,7 +147,7 @@ document.querySelector('.b-8').addEventListener('click', () => {
 // Task 9
 //При нажатии .b-9 выполняете функцию f9. Функция должна возвращать в out-9 самый большой индекс из вложенных в a9 массивов. В данном случае это 4. Т.е. самый большой вложенный массив это [0,0,0,0,0], а в нем самый большой индекс 4.
 
-let a9 = [[4, 3, 2, 0, 0, 0, 0, 0, 'm', 'm', 'm'], [2, 5, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
+let a9 = [[4, 3, 2], [2, 5], [0, 0, 0, 0, 0]];
 
 function f9() {
     let a = 0;
@@ -200,7 +202,7 @@ function f11() {
             out += a11[key] + ' ';
         }
     }
-    console.log(out);
+    document.querySelector('.out-11').textContent = out;
 }
 
 document.querySelector('.b-11').addEventListener('click', f11);
@@ -217,7 +219,7 @@ function f12() {
         out += key + ' ';
     }
 
-    console.log(out);
+    document.querySelector('.out-12').textContent = out;
 }
 
 document.querySelector('.b-12').addEventListener('click', f12);
@@ -235,7 +237,7 @@ function f13() {
         out += key + ' ';
     }
 
-    console.log(out);
+    document.querySelector('.out-13').textContent = out;
 }
 
 document.querySelector('.b-13').addEventListener('click', f13);
@@ -254,7 +256,7 @@ function f14() {
         out += key + ' ';
     }
 
-    console.log(out);
+    document.querySelector('.out-14').textContent = out;
 }
 
 document.querySelector('.b-14').addEventListener('click', f14);
@@ -267,7 +269,6 @@ function f15() {
     let nodeList = document.querySelectorAll('.out-15');
 
     for (let key of nodeList) {
-        console.log(nodeList[key]);
         key.textContent = 15;
     }
 
