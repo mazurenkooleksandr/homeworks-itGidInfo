@@ -68,9 +68,12 @@ function t5() {
     let a = document.querySelectorAll('p.task-5');
     
     for(let i = 0; i < a.length; i++) {
+        console.log(a[i].onclick);
         if(a[i].onclick){
-            a5_res.push(a[0].getAttribute('data'));
+            a5_res.push(a[i].getAttribute('data')); 
         }
+        
+        
     }
 
     document.querySelector('.out-5').innerHTML = a5_res;
