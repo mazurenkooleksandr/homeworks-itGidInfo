@@ -64,20 +64,20 @@ document.querySelector('.b-4').onclick = t4;
 // Task 5 ============================================
 /*  На странице созданы 3 p.task-5 c атрибутом data. С помощью forEach переберите их и добавьте событие клик. Напишите функцию t5, которая будет запускаться при клике и добавлять атрибут data элемента, по которому кликнули в массив a5_res.*/
 
-function t5() {
-<<<<<<< HEAD
-    let a = document.querySelectorAll('p.task-5');
+// function t5() {
+// <<<<<<< HEAD
+//     let a = document.querySelectorAll('p.task-5');
     
-    for(let i = 0; i < a.length; i++) {
-        console.log(a[i].onclick);
-        if(a[i].onclick){
-            a5_res.push(a[i].getAttribute('data')); 
-        }
+//     for(let i = 0; i < a.length; i++) {
+//         console.log(a[i].onclick);
+//         if(a[i].onclick){
+//             a5_res.push(a[i].getAttribute('data')); 
+//         }
         
         
-    }
+//     }
 
-=======
+// =======
 //     a5_res.push(this.getAttribute('data'));
   
 // >>>>>>> aa00cfdc0c7d04500fb54747249b6f245f3b741c
