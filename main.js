@@ -1,30 +1,112 @@
-function findOutlier(integers) {
-    console.log(integers);
-    let b = [];
-    let c = [];
-    for (let i = 0; i < integers.length; i++) {
-        if (integers[i] % 2 === 0) {
-            b.push(integers[i]);
-        } else {
-            c.push(integers[i]);
-        }
+// function songDecoder(song) {
+//     let out = ''
+//     let str = song.replace(new RegExp('WUB', 'g'), ' ');
+//     let arr = str.split(' ');
+//     arr.forEach(elem => {
+//         if (elem !== '') {
+//             out += elem + ' ';
+//         }
+//     })
+//     console.log(out);
+// }
+
+// songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB");
+
+// function tribonacci(signature, n) {
+//     let arr = [];
+//     if (n > 0) {
+//         for (let i = 0; i < signature.length; i++) {
+//             if (n > i) {
+//                 arr.push(signature[i]);
+//         }
+//     }
+//     for (let k = 0; k < n - 3; k++) {
+//         let a = arr[k];
+//         let b = arr[k + 1];
+//         let c = arr[k + 2];
+//         let d = a + b + c;
+//         arr.push(d);
+//     }
+// }
+// return arr;
+// }
+
+// console.log(tribonacci([1, 1, 1], 1));
+//[1,2,3,6,11,20,37,68,125,230])
+
+// function expandedForm(num) {
+//     let str = String(num);
+//     let out = '';
+//     console.log(str);
+//     if (num > 0) {
+//         for(let i = 0; i < str.length; i++) {
+//             if(str[i] > 0) {
+//                 out = str[i] + 0 + ' + ';
+//                 out += `${str[i]}`;
+//             } 
+//         }
+//         console.log(out);
+//     }
+// }
+function expandedForm(num) {
+    let multiple = 10;
+    let result = [];
+    while (num > 1){
+      let remainder = num%multiple;
+      if(remainder > 0){
+        result.unshift(remainder);
+      }
+      num -= remainder;
+      multiple = multiple * 10;
     }
-
-    if(b.length === 1) {
-        console.log(b[0]);
-    } else {
-        console.log(c[0]);
-    }
-}
-findOutlier([0, 1, 2])
+    return result.join(" + ");
+  }
+console.log(expandedForm(73));
 
 
 
+// function anagrams(word, words) {
+//     let a = word.split('').sort().join('');
+
+//     let c = words.filter(elem => {
+//         if(elem.split('').sort().join('') === a) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+
+//     });
+
+//     return c.reverse();
+
+
+// }
 
 
 
+// console.log(anagrams('racer', ['crazer', 'racer', 'racar', 'caers', 'carer']));
 
 
+
+// function findOutlier(integers) {
+//     console.log(integers);
+//     let b = [];
+//     let c = [];
+//     for (let i = 0; i < integers.length; i++) {
+//         if (integers[i] % 2 === 0) {
+//             b.push(integers[i]);
+//         } else {
+//             c.push(integers[i]);
+//         }
+//     }
+
+//     if(b.length === 1) {
+//         console.log(b[0]);
+//     } else {
+//         console.log(c[0]);
+//     }
+// }
+// findOutlier([0, 1, 2])
 
 // function disemvowel(str) {
 //     let out = '';
