@@ -48,20 +48,80 @@
 //         console.log(out);
 //     }
 // }
-function expandedForm(num) {
-    let multiple = 10;
-    let result = [];
-    while (num > 1){
-      let remainder = num%multiple;
-      if(remainder > 0){
-        result.unshift(remainder);
-      }
-      num -= remainder;
-      multiple = multiple * 10;
+// function expandedForm(num) {
+//     let multiple = 10;
+//     let result = [];
+//     while (num > 1){
+//       let remainder = num%multiple;
+//       if(remainder > 0){
+//         result.unshift(remainder);
+//       }
+//       num -= remainder;
+//       multiple = multiple * 10;
+//     }
+//     return result.join(" + ");
+//   }
+// console.log(expandedForm(73));
+// let out = '';
+// let amount = 0;
+// let v = [
+//   {
+//     win: 20, 
+//     winSymbol:'10',
+//   },
+//   {
+//     win: 40, 
+//     winSymbol:'K',
+//   },
+//   {
+//     win: 30, 
+//     winSymbol:'Q',
+//   },
+//   {
+//     win: 10, 
+//     winSymbol: function () {
+//       return 5;
+//     }
+//   },
+// ]
+// for(let i = 0; i < v.length; i++) {
+//   for(let key in v[i]) {
+//     console.log(v[i][key]);
+//     if(key == 'winSymbol') {
+//       out += v[i][key]+' ';
+//     } else if(key == 'win') {
+//       amount += v[i][key];
+//     }
+//   }
+// }
+// console.log(out, amount);
+
+// let a = [2, 5, 9];
+// let b = [];
+
+// for (let i = 0; i < a.length; i++) {
+//     b.push({x: i, y: a[i]});
+// }
+
+// console.log(b);
+
+
+var position = {
+    "0":[{"x":0,"y":1},{"x":1,"y":1},{"x":2,"y":1}],
+    "1":[{"x":0,"y":1},{"x":1,"y":2},{"x":2,"y":2}],
+    "2":[{"x":0,"y":1},{"x":1,"y":2},{"x":2,"y":1}],
+    "3":[{"x":0,"y":1},{"x":1,"y":1},{"x":2,"y":2}],
+    "4":[{"x":0,"y":0},{"x":1,"y":2},{"x":2,"y":0}],
+    "5":[{"x":0,"y":0},{"x":1,"y":2},{"x":2,"y":2}]}
+
+for( var key in position) {
+    for( var i = 0; i < position[key].length; i++) {
+        console.log(position[key][i]['x']);
     }
-    return result.join(" + ");
-  }
-console.log(expandedForm(73));
+}
+
+
+// console.log(position);
 
 
 

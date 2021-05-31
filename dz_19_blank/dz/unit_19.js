@@ -77,7 +77,7 @@ document.querySelector('.div-6').ondblclick = t6;
 /*  Дан блок .div-7. При клике правой кнопкой мыши на блоке добавляйте ему класс .active. При повторном клике - удаляйте. */
 let div7 = document.querySelector('.div-7');
 function t7() {
-        div7.classList.toggle('active');
+    div7.classList.toggle('active');
 }
 document.querySelector('.div-7').oncontextmenu = t7;
 
@@ -106,9 +106,11 @@ ch8.onchange = t8;
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
 
 function t9() {
+    picture = document.querySelector('.div-9 img');
+    picture.setAttribute("src", "img/2.png");
 
 }
-
+document.querySelector('.div-9').oncontextmenu = t9;
 // ваше событие здесь!!!
 
 
@@ -116,40 +118,51 @@ function t9() {
 /*  Дан блок .div-10. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. */
 
 function t10() {
-
+    let picture = document.querySelector('.div-10 img');
+    picture.setAttribute("src", "img/2.png");
 }
+
+document.querySelector(".div-10").onmouseenter = t10;
 
 // ваше событие здесь!!!
 
 // Task 11 ============================================
 /*  Дан блок .div-11. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. При уведении мыши - mouseleave - возвращайте исходное изображение. */
-
-function t11() {
-
+let div11 = document.querySelector('.div-11 img');
+function t11(event) {
+    if (event.target.getAttribute("src") === "img/1.png") {
+        event.target.setAttribute("src", "img/2.png");
+    } else {
+        event.target.setAttribute("src", "img/1.png");
+    }
 }
+div11.onmouseenter = t11;
+div11.onmouseleave = t11;
 
 // ваше событие здесь!!!
 
 // Task 12 ============================================
 /*  Дан блок .div-12. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. */
 
-// () => {
-
-// }
-
+t12 = () => {
+    document.querySelector('.div-12').classList.add('active');
+}
+document.querySelector('.div-12').onmousedown = t12;
 // ваше событие здесь!!!
 
 
 // Task 13 ============================================
 /*  Дан блок .div-13. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. Добавьте ему событие mouseup - при отпускании мыши - удаляйте класс active. */
 
-// () =>  {
+t13 = () =>  {
+    document.querySelector('.div-13').classList.add('active');
+}
+document.querySelector('.div-13').onmousedown = t13;
 
-// }
-
-// () =>  {
-
-// }
+t13 = () =>  {
+   document.querySelector('.div-13').classList.remove('active');
+}
+document.querySelector('.div-13').onmouseup = t13;
 // ваше событие здесь!!!
 
 
@@ -157,25 +170,29 @@ function t11() {
 /*  Дан блок .div-14. При нажатии кнопки b-14 добавляйте к нему событие onclick - которое, при клике добавляем блоку div-14 класс active. */
 
 function t14() {
-
+    document.querySelector('.div-14').classList.add('active');
 }
-document.querySelector('t-14').onclick = t14;
+document.querySelector('.b-14').onclick = t14;
 
 
 // Task 15 ============================================
 /*  Дан блок .div-15. Добавьте на него событие move. При каждом движении мыши увеличивайте число внутри на 1. */
-
+let num = +document.querySelector('.div-15').textContent;
 function t15() {
-
+    document.querySelector('.div-15').innerHTML = num;
+    num++;
 }
+document.querySelector('.div-15').onmousemove = t15;
 // ваше событие здесь!!!
 
 
 // Task 16 ============================================
 /*  Дан блок .div-16. Добавьте на него событие move. При каждом движении мыши увеличивайте ширину блока на 1px. */
 
+let width = 75;
 function t16() {
-
+    document.querySelector('.div-16').style.width = width + 'px';
+    width++;
 }
 // ваше событие здесь!!!
 
@@ -183,20 +200,24 @@ function t16() {
 /*  Дано две кнопки - b-17_on и b-17_off. Напишите фукнции t17On и t17Off которые включают и отключают событие move в задании 16. */
 
 function t17On() {
-
+    document.querySelector('.div-16').onmousemove = t16;
 }
 function t17Off() {
-
+    document.querySelector('.div-16').onmousemove = null;
 }
+document.querySelector('.b-17_on').onclick = t17On;
+document.querySelector('.b-17_off').onclick = t17Off;
 // ваше событие здесь!!!
 // ваше событие здесь!!!
 
 // Task 18 ============================================
 /*  Дан блок div-18. Напишите фукнцию t18 которая выводит в данный блок его ширину при событии onmouseenter. */
-
 function t18() {
-
+    let width = 0;
+    width++;
+    document.querySelector('.div-18').textContent = width;
 }
+document.querySelector('.div-18').onmouseenter = t18;
 // ваше событие здесь!!!
 
 // Task 19 ============================================
