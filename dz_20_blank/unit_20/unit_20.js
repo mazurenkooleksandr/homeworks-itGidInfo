@@ -89,9 +89,18 @@ const a8 = {
     i : 1,
     o : 0,
     l : 7
+
 }
 
 function t8(event) {
+    let out = '';
+
+    if(a8[event.key] !== undefined) {
+        out = a8[event.key];
+    } else {
+        out = event.key;
+    }
+    document.querySelector('.out-8').textContent += out;
     // 1. Получаем из event введенный символ
     // 2. Проверяем наличие такого ключа в a8 - уже делали это раньше!!!!
     // 3. Если есть дописываем в out-8 символ из массива a8. Если нет - введенный символ.
@@ -103,7 +112,12 @@ document.querySelector('.i-8').onkeydown= t8;
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t9, выводит в .out-9 количество (число) нажатых клавиш стрелка вниз. */
 
+let num = 0;
 function t9(event) {
+    if(event.keyCode == 40) {
+        num++;
+    }
+    document.querySelector('.out-9').textContent = num;
     console.log(event);
 }
 
@@ -115,10 +129,17 @@ document.querySelector('.i-9').onkeydown = t9;
 
 let h = 75;
 let w = 75;
+let block10 = document.querySelector('.block-10');
 
 function t10(event) {
     // увеличиваем  h, w, потом присваиваем как свойства...
-
+    if(event.keyCode == 37 || event.keyCode == 39) {
+        w++;
+    } else if (event.keyCode == 38 || event.keyCode == 40) {
+        h++;
+    }
+    block10.style.width = w + 'px';
+    block10.style.height = h + 'px';
 }
 
 document.querySelector('.i-10').onkeydown = t10;
