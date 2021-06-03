@@ -154,8 +154,25 @@ document.querySelector('.i-10').onkeydown = t10;
 */
 
 function t11(event) {
-    console.log(event.key);
+    let keyboards = document.querySelectorAll('.keyboard');
+    
 
+    for(let i = 0; i < keyboards.length; i++) {
+        keyboards[i].classList.remove('active');
+    }
+    
+    for(let i = 0; i < keyboards.length; i++) {
+        if (event.key == keyboards[i].innerHTML || keyboards[i].dataset == "space" 
+        || keyboards[i].dataset == 'ctrl') {
+            keyboards[i].classList.add('active');
+        }
+    }
+
+    let div = document.createElement('div');
+    div.classList.add('keyboard');
+    div.innerHTML = event.key;
+    let out = document.querySelector('.out-11');
+    out.appendChild(div);
 }
 
 document.querySelector('.i-11').onkeydown = t11;
