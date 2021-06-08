@@ -287,7 +287,7 @@ function t16() {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send('auth=DdC33D7d2C2a7&action=7');
     function m1(data) {
-        document.querySelector('.out-16').innerHTML = `<img src="${data}" width='50px' alt='1'>`;;
+        document.querySelector('.out-16').innerHTML = `<img src="${data}" width='50px' alt='1'>`;
     }
 }
 document.querySelector('.b-16').addEventListener('click', t16);
