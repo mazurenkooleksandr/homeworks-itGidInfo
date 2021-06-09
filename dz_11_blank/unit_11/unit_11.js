@@ -179,6 +179,10 @@ document.querySelector('.b-9').onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
+    
+    for(let i = 0; i < d10.length; i++) {
+        d10[i].reverse();
+    }
 
     showArr('.out-10', d10);
 }
