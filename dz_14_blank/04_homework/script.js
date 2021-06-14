@@ -15,6 +15,7 @@ function createOption () {
         let option = new Option (nameCities[key], key);
         document.querySelector('select').appendChild(option);
     }
+    getWeather();
 }
 createOption();
 
@@ -33,4 +34,5 @@ function getWeather() {
         document.querySelector('.weather-icons').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png" width="50px">`
     });
 }
+
 document.querySelector('#select-city').onchange = getWeather;
