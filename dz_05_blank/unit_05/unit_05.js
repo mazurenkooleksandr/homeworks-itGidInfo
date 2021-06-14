@@ -64,7 +64,7 @@ function t4() {
     let num = '';
     let divOut = document.querySelector('.out-4');
 
-    for (let i = 77; i >= 35; i--) {
+    for (let i = 77; i >= 35; i-=3) {
         num += i + '_';
     }
 
