@@ -62,8 +62,9 @@ document.querySelector('.b-3').onclick = f3;
 function f4(){
     let inputValue = +document.querySelector('.i-4').value;
     let divOut = document.querySelector('.out-4');
+    let a = 2021 - inputValue;
 
-    if (inputValue >= 18) {
+    if (a >= 18) {
         divOut.textContent = 1;
     }
     else {
