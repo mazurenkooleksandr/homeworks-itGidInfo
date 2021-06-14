@@ -106,7 +106,7 @@
 // console.log(b);
 
 
-var position = {
+let position = {
     "0":[{"x":0,"y":1},{"x":1,"y":1},{"x":2,"y":1}],
     "1":[{"x":0,"y":1},{"x":1,"y":2},{"x":2,"y":2}],
     "2":[{"x":0,"y":1},{"x":1,"y":2},{"x":2,"y":1}],
@@ -114,11 +114,11 @@ var position = {
     "4":[{"x":0,"y":0},{"x":1,"y":2},{"x":2,"y":0}],
     "5":[{"x":0,"y":0},{"x":1,"y":2},{"x":2,"y":2}]}
 
-for( var key in position) {
-    for( var i = 0; i < position[key].length; i++) {
-        console.log(position[key][i]['x']);
-    }
-}
+// for( var key in position) {
+//     for( var i = 0; i < position[key].length; i++) {
+//         console.log(position[key][i]['x']);
+//     }
+// }
 
 
 // console.log(position);
