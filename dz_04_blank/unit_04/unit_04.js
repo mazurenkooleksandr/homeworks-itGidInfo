@@ -88,6 +88,7 @@ function f7() {
         divOut71.textContent = checkboxI7;
     }
     else {
+        divOut72.textContent = 0;
         divOut71.textContent = checkboxI7;
     }
 }
@@ -153,8 +154,9 @@ document.querySelector('.b-10').onclick = f10;
 function f11() {
     let inputColor111 = document.querySelector('.i-111').value;
     let inputColor112 = document.querySelector('.i-112');
-
-    inputColor112 = inputColor111;
+    console.log(inputColor111);
+    
+    inputColor112.style.background = inputColor111;
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -201,11 +203,10 @@ document.querySelector('.b-14').onclick = f14;
 function f15() {
     let inputValue = document.querySelector('.i-15').value;
     let textareaT15 = document.querySelector('.t-15');
-    let textareaValue = textareaT15.value;
     let divOut = document.querySelector('.out-15');
 
     textareaT15.textContent = inputValue;
-    divOut.textContent = textareaValue;
+    divOut.textContent = inputValue;
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -240,9 +241,10 @@ document.querySelector('.s-17').onchange = f17;
 
 function f18() {
     let input18 = document.querySelector('.i-18');
+    let select18 = document.querySelector('.s-18').value;
 
-    input18.textContent = document.querySelector('.s-18').value;
-    console.log(input18);
+    input18.innerHTML = select18;
+    console.log(select18);
 }
 
 document.querySelector('.s-18').onchange = f18;
