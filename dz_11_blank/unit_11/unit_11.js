@@ -347,7 +347,7 @@ function f18() {
     let result = document.querySelector('.out-18');
 
     if(!d18.includes(inputValue)) {
-        d18.push(inputValue);
+        d18[d18.length] = inputValue;
     }
 
     result.textContent = d18;
