@@ -140,9 +140,8 @@ function f8() {
     let divOut8 = document.querySelector('.out-8');
     let divOut81 = document.querySelector('.out-8-1');
     let out = '';
-    ar8[3] = 3.14;
-    ar8[4] = 17;
-    ar8[6] = 5;
+
+    ar8.splice(3, 0, "3.14") + ar8.splice(4, 0, "17") + ar8.splice(6, 0, "5") ;
 
     for(let i = 0; i < ar8.length; i++) {
         out += ar8[i] + ' - ';
