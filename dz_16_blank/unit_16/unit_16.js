@@ -2,29 +2,14 @@
 //При нажатии .b-1 выполняете функцию f1. Функция перебирает массив a1  c помощью цикла for (let i. Выведите на страницу в .out-1 формате значение+пробел.
 
 let a1 = [5, 7, 9, 11, 13, 15];
-let rrr = [5, 7, 9];
-let tttt = [5, 7, 7, 15];
+
 
 function f1() {
     let out = '';
     
-    a1.map(testFunction);
-    rrr.map(testFunction);
-    tttt.map(testFunction);
-
-    function testFunction(elem, v1, v2) {
-        out += elem + ' ';
-    }l
-
-    // function testFunct2(_arr){
-    //     for (let i = 0; i < _arr.length; i++) {
-    //         testFunction(_arr[i]);
-    //     }
-    // }
-
-    // testFunct2(a1);
-    // testFunct2(rrr);
-    // testFunct2(tttt);
+   for(let i = 0; i < a1.length; i++) {
+       out += a1[i] + ' ';
+   }
 
     document.querySelector('.out-1').textContent = out;
 }
@@ -40,7 +25,7 @@ function f2() {
     let out = '';
 
     for (let i = 0; i < a2.length; i++) {
-        out += i + ': ' + a2[i] + ', ';
+        out += i + ' ' + a2[i] + ' ';
     }
     document.querySelector('.out-2').textContent = out;
 }
@@ -68,7 +53,7 @@ document.querySelector('.b-3').addEventListener('click', f3);
 function f4() {
     let divOut = document.querySelectorAll('div.out-4');
     for (let key in divOut) {
-        divOut[key].innerHTML = 4;
+        divOut[key].innerHTML += 4;
     }
 }
 
@@ -127,9 +112,9 @@ let a7 = [{ id: 23, name: 'Ivan' }, { id: 45, name: 'Petr' }];
 function f7() {
     let a = {};
     for (let i = 0; i < a7.length; i++) {
-        var elem = a7[i];
-        var v1 = elem['id'];
-        var v2 = elem['name'];
+        let elem = a7[i];
+        let v1 = elem['id'];
+        let v2 = elem['name'];
         a[v1] = v2;
     }
     return a;
@@ -149,8 +134,8 @@ function f8() {
     let a = [];
 
     for (let i = 0; i < a8.length; i++) {
-        var elem = a8[i];
-        var v1 = elem['id'];
+        let elem = a8[i];
+        let v1 = elem['id'];
         a.push(v1);
     }
 
@@ -190,7 +175,7 @@ function f10() {
     let a = {};
 
     for (let i = 0; i < a10.length; i++) {
-        var elem = a10[i];
+        let elem = a10[i];
         a[elem] = elem;
     }
 

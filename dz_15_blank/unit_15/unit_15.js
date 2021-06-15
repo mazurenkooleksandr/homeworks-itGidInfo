@@ -81,13 +81,8 @@ let a6 = [1, 2, 3, 4, 5, 3, 4, 5, 2, 4, 5, 3, 24, 5, 2, 4, 56, 4, 3, 2, 335, 2, 
 
 const f6 = () => {
     let s6 = new Set(a6);
-    let out = '';
 
-    for(let key of s6) {
-        out += key + ' ';
-    }
-
-    document.querySelector('.out-6').textContent = out;
+    document.querySelector('.out-6').textContent = s6.size;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -213,9 +208,9 @@ let str13 = [
 const f13 = () => {
     let b = {};
     for(let i = 0; i < str13.length; i++) {
-        var currentString = str13[i];
+        let currentString = str13[i];
         for(let k = 0; k < currentString.length; k++) {
-            var key = currentString[k];
+            let key = currentString[k];
             if(b[key]) {
                 b[key]++;
             } else {
@@ -227,6 +222,7 @@ const f13 = () => {
 
     return b;
 }
+
 
 document.querySelector('.b-13').onclick = () => {
     console.log(f13());
