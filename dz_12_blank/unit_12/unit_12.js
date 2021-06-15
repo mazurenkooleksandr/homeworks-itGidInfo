@@ -74,9 +74,9 @@ document.querySelector('.b-5').onclick = f5;
 function f6() {
     let out = '';
     let a6 = [[1, 2], [3, 4], [5, 6], [21, 34, 45], [44, 56]];
-    for(let i = 0; i < a6.length; i++) {
-        if(a6[i][0] % 2) out += a6[i][0] + ' ';
-        if(a6[i][1] % 2) out += a6[i][1] + ' ';
+    for (let i = 0; i < a6.length; i++) {
+        if (a6[i][0] % 2) out += a6[i][0] + ' ';
+        if (a6[i][1] % 2) out += a6[i][1] + ' ';
     }
     document.querySelector('.out-6').textContent = out;
 }
@@ -119,9 +119,9 @@ function f8() {
         [44, 56]
     ];
 
-    for(let i = 0; i < a8.length; i++) {
-        for(let k = 0; k < a8[i].length; k++) {
-            if(a8[i][k] % 2) out += a8[i][k] + ' ';
+    for (let i = 0; i < a8.length; i++) {
+        for (let k = 0; k < a8[i].length; k++) {
+            if (a8[i][k] % 2) out += a8[i][k] + ' ';
         }
     }
 
@@ -143,9 +143,9 @@ function f9() {
         [44, -56]
     ];
 
-    for(let i = 0; i < a9.length; i++) {
-        for(let k = 0; k < a9[i].length; k++) {
-            if(a9[i][k] > 0) out += a9[i][k] + ' ';
+    for (let i = 0; i < a9.length; i++) {
+        for (let k = 0; k < a9[i].length; k++) {
+            if (a9[i][k] > 0) out += a9[i][k] + ' ';
         }
     }
 
@@ -168,9 +168,9 @@ function f10() {
         [44, -56, 'task']
     ];
 
-    for(let i = 0; i < a10.length; i++) {
+    for (let i = 0; i < a10.length; i++) {
         for (let k = 0; k < a10[i].length; k++) {
-            if(typeof(a10[i][k]) === 'string') out += a10[i][k] + ' ';
+            if (typeof (a10[i][k]) === 'string') out += a10[i][k] + ' ';
         }
     }
 
@@ -192,8 +192,8 @@ let a11 = [
 function f11() {
     let out = '';
 
-    for(let i = 0; i < a11.length; i++) {
-        for(let k = a11[i].length-1; k >= 0; k--) {
+    for (let i = 0; i < a11.length; i++) {
+        for (let k = a11[i].length - 1; k >= 0; k--) {
             out += a11[i][k] + ' ';
         }
     }
@@ -208,21 +208,21 @@ document.querySelector('.b-11').onclick = f11;
 
 function f12() {
     let a12 = [
-        [0,1,0,1,0,1,0,1],
-        [1,0,1,0,1,0,1,0],
-        [0,1,0,1,0,1,0,1],
-        [1,0,1,0,1,0,1,0],
-        [0,1,0,1,0,1,0,1],
-        [1,0,1,0,1,0,1,0],
-        [0,1,0,1,0,1,0,1],
-        [1,0,1,0,1,0,1,0],
+        [0, 1, 0, 1, 0, 1, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1, 0],
+        [0, 1, 0, 1, 0, 1, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1, 0],
+        [0, 1, 0, 1, 0, 1, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1, 0],
+        [0, 1, 0, 1, 0, 1, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1, 0],
     ];
 
     let out = '';
 
-    for(let i = 0; i < a12.length; i++) {
-        for(let k = 0; k < a12[i].length; k++) {
-            if(a12[i][k] == 1) out += a12[i][k] + ' ';
+    for (let i = 0; i < a12.length; i++) {
+        for (let k = 0; k < a12[i].length; k++) {
+            if (a12[i][k] == 1) out += a12[i][k] + ' ';
         }
     }
 
@@ -237,16 +237,29 @@ document.querySelector('.b-12').onclick = f12;
 let a13 = [];
 
 function f13() {
-    for(let i = 0; i < 5; i++) {
-        a13.push([]);
-        for(let k = 0; k < 5; k++) {
-            if(k % 2) {
-                a13[i].push(1);
-            }
-            else {
-                a13[i].push(0);
+    for (let i = 0; i < 8; i++) {
+        let x = [];
+        if (i % 2 == 0) {
+            for (let k = 0; k < 8; k++) {
+                if (k % 2 == 0) {
+                    x.push(0);
+                }
+                else {
+                    x.push(1);
+                }
             }
         }
+        else {
+            for (let k = 0; k < 8; k++) {
+                if (k % 2 == 0) {
+                    x.push(1);
+                }
+                else {
+                    x.push(0);
+                }
+            }
+        }
+        a13.push(x);
     }
     console.log(a13);
 }
@@ -259,16 +272,18 @@ document.querySelector('.b-13').onclick = f13;
 
 let a14 = [
     [],
-    [1,0],
-    [1,0,0,0],
-    [3,4,5,6,7,8],
-    [1,2]
+    [1, 0],
+    [1, 0, 0, 0],
+    [3, 4, 5, 6, 7, 8],
+    [1, 2]
 ];
 
 let out = '';
 function f14() {
-    for(let i = 0; i < a14.length; i++) {
-        out += a14[i].length + ' ';
+    for (let i = 0; i < a14.length; i++) {
+        if (a14[i].length > 0) {
+            out += a14[i].length + ' ';
+        }
     }
 
     document.querySelector('.out-14').textContent = out;
@@ -282,17 +297,17 @@ document.querySelector('.b-14').onclick = f14;
 
 let a15 = [
     [],
-    [1,0],
-    [1,0,0,0],
-    [3,4,5,6,7,8],
-    [1,2]
+    [1, 0],
+    [1, 0, 0, 0],
+    [3, 4, 5, 6, 7, 8],
+    [1, 2]
 ];
 
 function f15() {
     let a = 0;
 
-    for(let i = 0; i < a15.length; i++) {
-        if(a < a15[i].length) {
+    for (let i = 0; i < a15.length; i++) {
+        if (a < a15[i].length) {
             a = a15[i].length;
         }
     }
@@ -308,7 +323,7 @@ document.querySelector('.b-15').onclick = f15;
 // Ответ в данной задаче прописан сразу. Т.е вы руками просто пишите массив такой, чтобы условия выполнялись.
 
 let a16 = [
-    [0,7,0,6],
+    [0, 7, 0, 6],
     0,
     0,
     8
@@ -390,6 +405,6 @@ let a20 = [
 console.group('Task 20 ================');
 console.log(a20[1][1][1] == 9);
 console.log(a20[2][2] == 18);
-console.log(a20[3]== 12);
+console.log(a20[3] == 12);
 
 console.groupEnd();
