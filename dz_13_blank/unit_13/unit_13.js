@@ -74,7 +74,7 @@ let a4 = {
 function f4() {
     let out = '';
     for(let key in a4) {
-        out += a4[key] + '<br>';
+        out += key + ' ' + a4[key] + '<br>';
     }
 
     return out;
@@ -95,7 +95,7 @@ function f5(arr, block) {
     //
     // тут вывод в блок block
     for(let key in arr) {
-        out += `${key} : ${arr[key]} <br>`;
+        out += `${key}: ${arr[key]} <br>`;
     }
 
     document.querySelector(block).innerHTML = out;
