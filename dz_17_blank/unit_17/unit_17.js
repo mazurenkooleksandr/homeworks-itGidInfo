@@ -145,11 +145,12 @@ document.querySelector('.b-7').onclick = () => {
 let a8 = [3, 14, 15, 92, 7, 32, 59];
 
 function t8() {
-    for (let i = 0; i < a8.length; i++) {
-        if (i % 2) {
-            a8_res.push(i);
+    let a8_res = a8.map((item, index) => {
+        if (item % 2 == 0) {
+            return index;
         }
-    }
+    }).filter(item => item);
+
     return a8_res;
 }
 
@@ -305,7 +306,9 @@ let a15 = [
 
 function t15() {
     a15_res = a15.filter(function(elem) {
-        return elem.pnum !== '';
+        if (elem.pnum !== '' && elem.pnum.length == 6) {
+            return true;
+        };
     });
     
     return a15_res;
